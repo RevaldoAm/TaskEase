@@ -1,0 +1,202 @@
+/* ========== Task List ========== */
+
+.task-div {
+    margin-top: 7.5vh;
+    width: 90%;
+}
+
+.task-content {
+    position: relative;
+    width: 100%;
+    max-height: 40vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: 0;
+}
+
+.task-item {
+    width: 100%;
+    height: 57px;
+    margin-bottom: 1.5px;
+    opacity: 75%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 7px;
+    font-family: Helvetica;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.task-item-content {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.task-item:hover {
+    opacity: 100%;
+    padding:5px;
+}
+
+.task-item input[type=radio] {
+    border: 0px;
+    width: 15px;
+    margin-left: 20px;
+    height: 2em;
+}
+
+.task-item-h {
+    margin-left: 18px;
+}
+
+.task-name {
+    margin:0;
+    font-weight: 600;
+}
+
+.task-date {
+    margin: 0;
+    display: inline;
+    opacity: 70%;
+}
+
+.task-date img {
+    width: 12px;
+    margin-right: 8px;
+}
+
+.task-item-right {
+    position: absolute;
+    right: 35px;
+}
+
+.task-item-right p {
+    opacity: 40%;
+    display: inline;
+}
+
+.task-today {
+    color: #66cf8e;
+}
+
+.task-past {
+    color: #cf6666;
+}
+
+.task-fav-btn {
+    margin-left: 12px;
+    background: none;
+    border: none;
+    height: 57px;
+    width: 17px;
+}
+
+.task-item-mobile {
+    display: none;
+}
+
+.task-fav-btn img {
+    width: 17px;
+}
+
+/* ========== Notifications ========== */
+.notif-div {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 22vw;
+    height: 180px;
+    overflow: hidden;
+    border-bottom-left-radius: 25px;
+    z-index: 20;
+    margin-top: -200px;
+}
+
+.notif-head {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #5656596b;
+    flex-wrap: nowrap;
+}
+
+.notif-head p {
+    display: inline;
+    font-weight: 700;
+    margin-left: 8%;
+    font-size: 18px;
+}
+
+.notif-item {
+    margin-left: 8%;
+    width: 88%;
+    height: 75px;
+}
+
+.notif-content {
+    width: 100%;
+    height: 75%;
+}
+
+.notif-item h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.notif-item p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.notif-head i {
+    font-size: 20px;
+    color: #797979;
+    right: 15px;
+    position: absolute;
+}
+
+/* ========== On Mobile ========== */
+@media screen and (max-width:680px) {
+    .notif-div {
+        top: 50px;
+        width: 50vw;
+        height: 200px;
+    }
+
+    .task-div {
+        width: 100%;
+    }
+
+    .fav-div {
+        width: 100%;
+    }
+    
+    .task-item-right {
+        display: none;
+    }
+
+    .task-item {
+        height: 100px;
+    }
+
+    .task-item-mobile {
+        display: inline;
+        width: 100%;
+    }
+
+    .task-item-mobile p {
+        display: inline;
+        margin: 0;
+        margin-left: 12.5px;
+        opacity: 50%;
+    }
+
+    .task-fav-btn {
+        height:10px;
+    }
+
+    .task-item-content {
+        flex-wrap: wrap;
+        height: 60px;
+    }
+}

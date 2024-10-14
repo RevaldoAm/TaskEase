@@ -1,0 +1,463 @@
+/* =========== NAVBAR =========== */
+.navbar {
+    width: 30%;
+    height:100vh;
+    transition: 600ms;
+    transition-timing-function: ease-in-out;
+}
+
+.nav-container {
+    width:80%;
+    height:87.5vh;
+    margin-top: 7.5vh;
+    margin-left: 10%;
+    position: relative;
+    transition: 600ms;
+    transition-timing-function: ease-in-out;
+}
+
+.nav-title {
+    font-weight: 700;
+}
+
+#nav-search {
+    width: 100% ;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    
+    background-image: url("../assets/navbar/search.png");
+    background-repeat: no-repeat;
+    text-indent: 20px;
+    background-size: 15px 15px;
+    background-position: calc(100% - 18px);
+    background-color: #f1f1f1;
+}
+
+.util-bar {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+.util-btn {
+    background: none;
+    border: none;
+}
+
+.util-btn img {
+    width:17px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    height: 25px;
+    width: 80%;
+    text-align: left;
+    opacity: 50%;
+    transition: 500ms;
+}
+
+.nav-btn:hover {
+    opacity: 100%;
+    padding:5px;
+}
+
+.nav-btn img {
+    width: 24px;
+    top:6px;
+    position: relative;
+    margin-top: 25px;
+}
+
+.nav-btn p {
+    display: inline;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+/* =========== GUI OVERLAYS =========== */
+.gui-bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: 700ms;
+    transition-timing-function: ease-in-out;
+    display: none;
+}
+
+.gui-content {
+    position: relative;
+    width: 30%;
+    height: 75%;
+    border-radius: 25px;
+    left: 35%;
+    top:100vh;
+    transition: 600ms;
+    transition-timing-function: ease-in-out;
+}
+
+.gui-window-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    gap:5px;
+    position: relative;
+    margin-left: 30px;
+    top: 2.5%;
+}
+.gui-window-btn {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    opacity: 70%;
+    transition: 250ms;
+}
+
+.gui-window-btn:hover {
+    opacity: 100%;
+}
+
+.gui-close { background-color: #ff6159; }
+.gui-minimize { background-color: #ffbe30; }
+.gui-full { background-color: #2ace42; }
+
+.gui-input-container {
+    position: relative;
+    width:85%;
+    height: 70%;
+    margin-left: 7.5%;
+    top: 45px;
+}
+
+.gui-input-container h2 {
+    font-family: Helvetica;
+    font-weight: 600;
+}
+
+.gui-input {
+    width: 100%;
+    margin-top: 25px;
+    height:30px;
+    border-radius: 8px;
+    border: none;
+    padding-left: 15px;
+    color:#727172;
+    font-family: Helvetica;
+}
+
+.gui-submit {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
+    bottom: 0;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-family: Helvetica;
+    opacity: 90%;
+}
+
+.gui-error-msg {
+    color: rgba(230, 0, 0, 0.7); 
+    font-family: Helvetica;
+}
+
+.add-task-div {
+    display: none;
+}
+
+#add_name {
+    width: calc(100% - 18px);
+}
+
+#add_date {
+    width: calc(100% - 15px);
+}
+
+#add_time {
+    width: calc(100% - 15px);
+}
+
+/* Add Task */
+.add-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 22.5px;
+    background-color: rgb(101, 55, 144);
+    border: none;
+    position:fixed;
+    bottom: 5vh;
+    right:5vw;
+    opacity: 40%;
+    transition: 650ms;
+}
+
+.add-btn:hover {
+    opacity:80%;
+    width: 140px;
+}
+
+.add-btn-img {
+    width: 15px;
+    margin-top: 2.5px;
+    transition: 250ms;
+    transition-timing-function: ease-in-out;
+}
+
+.add-btn-txt {
+    font-weight: 600;
+    font-size: 15px;
+    transition: 250ms;
+    transition-timing-function: ease-in-out;
+    display: none;
+    opacity: 0%;
+}
+
+.switch {
+    --false: #E81B1B;
+    --true: #009068;
+   }
+   
+input[type=checkbox] {
+    appearance: none;
+    height: 30px;
+    width: 3.5rem;
+    background-color: #fff;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type=checkbox]::before {
+    content: '';
+    display: block;
+    height: 24px;
+    width: 26px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: calc(1.9em/2 + .3em);
+    background-color: var(--false);
+    border-radius: 10px;
+    transition: .3s ease;
+}
+
+input[type=checkbox]:checked::before {
+    background-color: var(--true);
+    left: calc(100% - (1.9em/2 + .3em));
+}
+
+.gui-clear {
+    width: calc(97% - 3.5rem);
+    margin-top: -4px;
+    margin-left: 3%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-family: Helvetica;
+    opacity: 90%;
+}
+
+.notif-gui-div {
+    display: none;
+}
+
+.notif-gui-h {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.notif-gui-content {
+    margin-top: 2vh;
+    width: 100%;
+    height: 85%;
+}
+
+.notif-gui-item {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.notif-gui-item h3 {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+.notif-gui-item p {
+    font-size: 0.95rem;
+    margin-top: 3px;
+    margin-bottom: 16px;
+}
+
+/* ======== Mobile Navbar ======== */
+
+.nav-mobile {
+    display: none;
+    width: 100vw;
+    height: 55px;
+    position: fixed;
+    bottom: 0;
+}
+
+.nav-mobile-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 78vw;
+    border-top-right-radius: 25px;
+}
+
+.nav-btn-mobile {
+    background: none;
+    border: none;
+    height: 80%;
+    width: 14%;
+    text-align: center;
+    display: flex;
+    opacity: 50%;
+    transition: 500ms;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-btn-mobile p { 
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 12px;
+}
+
+.nav-btn-mobile img {
+    width: 50%;
+}
+
+.add-btn-cover {
+    width: 16vw;
+    height: 16vw;
+    bottom: 12px;
+    position: fixed;
+    border-radius: 50%;
+    right: 6.7vw;
+    z-index: 3;
+}
+
+.nav-mobile-box {
+    width: 25vw;
+    height: 30px;
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    display: none;
+}
+
+.nav-mobile-box2 {
+    display: none;
+    width: 7.4vw;
+    right:0;
+    bottom:0;
+    position: fixed;
+    height: 55px;
+    border-top-left-radius: 25px;
+}
+
+.top-nav {
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    display: none;
+    align-items: center;
+    z-index: 50;
+}
+
+.top-nav-btns {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80vw;
+    right: 0;
+    position: fixed;
+    justify-content: flex-end;
+}
+
+.top-nav-header {
+    width: 40vw;
+    overflow: hidden;
+}
+
+#nav-search-mobile {
+    display: none;
+    width: 0vw;
+    margin-left: 7.5vw;
+    height: 26px;
+    border: none;
+    border-radius: 15px;
+    position: fixed;
+    
+    background-image: url("../assets/navbar/search.png");
+    background-repeat: no-repeat;
+    text-indent: 20px;
+    background-size: 15px 15px;
+    background-position: calc(100% - 18px);
+    background-color: #f1f1f1;
+    transition: 600ms;
+    transition-timing-function: ease-in-out;
+}
+
+/* ========== On Mobile ========== */
+@media screen and (max-width:680px) {
+    .navbar {
+        display: none;
+    }
+
+    .nav-title {
+        font-size: 18px;
+        margin-left: 7.5vw;
+        color: #f1f1f184;
+    }
+
+    .nav-mobile {
+        display: flex;
+    }
+
+    .top-nav {
+        display: flex;
+    }
+
+    .add-btn {
+        bottom: 20px;   
+        right: 8vw;
+        width: 13vw;
+        height: 13vw;
+        border-radius: 50%;
+        opacity: 100%;
+        background-color: #3c294e;
+    }
+
+    .nav-mobile-box, .nav-mobile-box2 {
+        display: block;
+    }
+
+    .add-btn:hover {
+        width: 13vw;
+    }
+
+    #nav-search {
+        font-size: 10px;
+        text-indent: 10px;
+        background-size: 10px 10px;
+        height: 25px;
+    }
+}

@@ -1,0 +1,134 @@
+body {
+    margin:0;
+    padding:0;
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* =========== Color Classes =========== */
+/* Background Colors */
+.bg-col-main {
+    background-color: #2d2a2e;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.bg-col-dark {
+    background-color: #221f22;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.bg-col-darker {
+    background-color: #19181a;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.bg-col-light {
+    background-color: #e5d9f127;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.bg-col-light-alt {
+    background-color: #c4bacf0f;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.bg-col-light-2 {
+    background-color: #363337eb;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.bg-col-lighter {
+    background-color: #dcd8e0;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.bg-contrast-lighter {
+    background-color:rgba(42, 47, 118, 0.37);
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+/* Text Colors */
+.text-col-h {
+    color: #f4f4f4;
+    font-family: Helvetica;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.text-col-p {
+    color: #797979;
+    font-family: Helvetica;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.text-col-dark {
+    color:#5d585e;
+    font-family: Helvetica;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.text-col-light {
+    color: rgba(255, 255, 255, 0.511);
+    font-family: Helvetica;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+/* Image Filters */
+.filter-dark {
+    filter: brightness(20%);
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.filter-dark-less {
+    filter: brightness(40%);
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.scroll {
+    overflow-y: auto;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 0.4em;
+    background: #00000000;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background: #55555953;
+    border-radius: 20px;
+}
+
+/* ======= Content ======== */
+
+.content-container {
+    margin-left: 5vw;
+    width: 64vw;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+@media screen and (max-width:680px) {
+    
+    .content-container {
+        width: 85vw;
+        margin-left: 7.5vw;
+        height:95vh;
+        margin-top:5vh;
+    }
+}

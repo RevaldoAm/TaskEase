@@ -1,0 +1,48 @@
+#filterTask {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.fav-div {
+    width: 90%;
+    height: 20vh;
+    margin-top: 10px;
+    border-radius: 7px;
+    opacity: 75%;
+    display: flex;
+    overflow: hidden;
+}
+
+.fav-content {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-top:2.5vh;
+    align-items: center;
+}
+
+.fav-inner {
+    margin-top: -5px;
+    width: 100%;
+    transition: 800ms;
+    transition-timing-function: ease-in-out;
+    opacity: 0;
+    margin-left: -200px;
+}
+
+.fav-inner p {
+    opacity: 40%;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: calc(12px + 0.4vw);
+}
+.fav-inner h2 {
+    font-weight: 600;
+    font-size: calc(16px + 0.8vw);
+    opacity: 100%;
+    margin-bottom: 0;
+}

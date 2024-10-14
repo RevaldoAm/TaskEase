@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/daf39d75f1.js" crossorigin="anonymous"></script>
+    <script src="scripts/jquery-3.6.3.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/scriptindex.js"></script>
+    <script src="scripts/scripttask.js"></script>
+    <link rel="icon" href="./assets/taskease_alt.png">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/stylesnav.css">
+    <link rel="stylesheet" href="static/stylesindex.css">
+    <link rel="stylesheet" href="static/stylestask.css">
+    <title>TaskEase</title>
+</head>
+<body class="bg-col-main" onload="start()">
+    <!-- NAVBAR -->
+    <div class="navbar bg-col-dark" onmouseenter="navEnter()" onmouseleave="navLeave()">
+        <div class="nav-container">
+            <h1 class="nav-title text-col-h">TaskEase</h1> 
+            <input type="text" id="nav-search" placeholder="Search">
+            
+            <!-- Nav Button Group -->
+            <div class="nav-content">
+                <button class="nav-btn text-col-p" onclick="inbox()">
+                    <img src="./assets/navbar/inbox.png">
+                    <p>tasks</p>
+                </button>
+                <button class="nav-btn text-col-p" onclick="today()">
+                    <img src="./assets/navbar/today.png">
+                    <p>today</p>
+                </button>
+                <button class="nav-btn text-col-p" onclick="calendar()">
+                    <img src="./assets/navbar/calendar.png">
+                    <p>upcoming</p>
+                </button>
+            </div>
+
+            <!-- Utility Bar -->
+            <div class="util-bar">
+                <button class="util-btn" onclick="navLock()">
+                    <img src="./assets/navbar/unlocked.png" class="filter-dark util-lock" alt="Lock">
+                </button>
+                <button class="util-btn" onclick="colorMode()">
+                    <img src="./assets/navbar/nightmode.png" class="filter-dark util-color" alt="Brightmode">
+                </button>
+                <button class="util-btn" onclick="displayGui('notif')">
+                    <img src="./assets/navbar/notification.png" class="filter-dark" alt="Settings">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Mobile -->
+    <div class="top-nav bg-col-dark">
+        <input type="text" id="nav-search-mobile" placeholder="Search">
+        <div class="top-nav-header">
+            <h1 class="nav-title text-col-h">TaskEase</h1> 
+        </div>
+        <div class="top-nav-btns">
+            <button class="nav-btn-mobile" onclick="displayGui('notif')">
+                <img src="./assets/navbar/notification.png" class="filter-dark-less" alt="Brightmode">
+            </button>
+            <button class="nav-btn-mobile" onclick="colorMode()">
+                <img src="./assets/navbar/nightmode.png" class="filter-dark-less util-color" alt="Brightmode">
+            </button>
+            <button class="nav-btn-mobile" onclick="searchClick()">
+                <img src="./assets/navbar/search.png">
+            </button>
+        </div>
+    </div>
+    
+    <div class="nav-mobile">
+        <div class="add-btn-cover bg-col-main"></div>
+        <div class="nav-mobile-container bg-col-dark">
+            <button class="nav-btn-mobile text-col-p" onclick="inbox()">
+                <img src="./assets/navbar/inbox.png">
+                <p>tasks</p>
+            </button>
+            <button class="nav-btn-mobile text-col-p" onclick="today()">
+                <img src="./assets/navbar/today.png">
+                <p>today</p>
+            </button>
+            <button class="nav-btn-mobile text-col-p" onclick="calendar()">
+                <img src="./assets/navbar/calendar.png">
+                <p>upcoming</p>
+            </button>
+        </div>
+        <div class="bg-col-dark nav-mobile-box"></div>
+        <div class="bg-col-dark nav-mobile-box2"></div>
+    </div>
+
+    <!-- CONTENTS -->
+    <div class="content-container">
+        <!-- CLOCK -->
+        <div class="clock-div">
+            <h2 class="text-col-dark date-txt"></h2>
+            <div class="text-col-dark clock-txt"></div>
+        </div>
+
+        <!-- If no task -->
+        <div class="greet-div">
+            <h2 class="greet-txt text-col-dark"></h2>
+            <h3 class="text-col-dark">No tasks for today!</h3>
+        </div>
+        
+        <!-- TASKS -->
+        <div class="task-div">
+            <h2 class="text-col-dark task-head">Today's tasks</h2>
+            <div class="task-content scroll"></div>
+        </div>
+
+        <!-- ADD TASK BTN -->
+        <button class="add-btn" onclick="displayGui('addTask')" onmouseenter="addBtn_Hover(1)" onmouseleave="addBtn_Hover(0)">
+            <p class="add-btn-txt text-col-h">Add Tasks</p>
+            <img class="add-btn-img" src="./assets/add.png" alt="+">
+        </button>
+
+        <!-- NOTIFICATION DIV -->
+        <div class="notif-div bg-col-light-2">
+            <div class="notif-head">
+                <p class="text-col-p">Notifications</p>
+                <i class="fa-sharp fa-solid fa-xmark" onclick="closeNotif()"></i>
+            </div>
+            <div class="notif-content scroll"></div>
+        </div>
+
+        <!-- GUI OVERLAYS -->
+        <div class="gui-bg">
+            <div class="gui-content bg-col-lighter">
+                <!-- Minimize & Close window buttons -->
+                <span class="gui-window-nav">
+                    <div class="gui-window-btn gui-close" onclick="hideGui()"></div>
+                    <div class="gui-window-btn gui-minimize" onclick="guiMinimize()"></div>
+                    <div class="gui-window-btn gui-full" onclick="guiFullScreen()"></div>
+                </span>
+
+                <!-- Add Task -->
+                <div class="add-task-div gui-input-container">
+                    <h2>Add new task</h2>
+                    <select class="gui-input" id="add_type">
+                        <option selected="true" disabled="true">Task Type</option>
+                        <option value="Project">Project</option>
+                        <option value="Assignment">Assignment</option>
+                        <option value="Exam">Exam</option>
+                        <option value="Chore">Chore</option>
+                        <option value="Workout">Workout</option>
+                    </select>
+                    <input type="text" class="gui-input" id="add_name" placeholder="Task Name">
+                    <input type="date" class="gui-input" id="add_date">
+                    <input type="time" class="gui-input" id="add_time">
+                    <p class="gui-error-msg"></p>
+
+                    <input type="button" class="gui-submit bg-contrast-lighter" value="Submit" onclick="addTask()">
+                </div>
+
+                <!-- Notifications -->
+                <div class="notif-gui-div gui-input-container">
+                    <h2>Notifications</h2>
+                    <div class="notif-gui-h">
+                        <label class="switch">
+                            <input type="checkbox" class="notif-checkbox" onclick="notifModeChange()">
+                        </label>
+                        <input type="button" class="gui-clear bg-contrast-lighter" value="Clear Notifications" onclick="clearNotif()">
+                    </div>
+
+                    <div class="notif-gui-content scroll"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

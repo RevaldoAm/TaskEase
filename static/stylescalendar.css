@@ -1,0 +1,107 @@
+td {
+    text-align: center;
+}
+
+.calendar-month {
+    display: inline;
+}
+
+.month-div {
+    width: 20vw;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10px;
+    margin-bottom: 35px;
+}
+
+.calendar-div {
+    width: auto;
+    width: 20vw;
+    min-width: 180px;
+    border-radius: 20px;
+    padding: 35px;
+    align-self: flex-start;
+}
+
+.tbl-calendar {
+    width: 20vw;
+    height: 20vw;
+    min-width: 180px;
+    min-height: 180px;
+}
+
+.date-marker {
+    width: 5px; 
+    height: 5px; 
+    border-radius: 50%; 
+    position: absolute;
+    margin-left: calc(3.2px + 1vw);
+    margin-top: calc(0.4px + 0.5vw);
+}
+
+.calendar-outer {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 5vh;
+    justify-content: center;
+}
+
+/* ========= Tasks Div ========== */
+.date-task-div {
+    position: relative;
+    width: 50%;
+    height: 80vh;
+    margin-left: 5%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: 0;
+}
+
+.date-task-div::-webkit-scrollbar {
+    width: 0.4em;
+    background: #00000000;
+}
+
+.date-task-div::-webkit-scrollbar-thumb {
+    background: #5d578f53;
+    border-radius: 20px;
+}
+
+.date-task-h {
+    margin-top: 0;
+}
+
+.date-selector {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 0.1vw;
+    margin-top: -0.3vw;
+    opacity: 80%;
+}
+
+@media screen and (max-width:680px) {
+    .calendar-outer {
+        flex-wrap: wrap;
+        width: 200px;
+        margin-inline: auto;
+    }
+
+    .date-task-div {
+        margin-left: 0;
+        height: calc(60vh - 190px);
+        margin-top: 3vh;
+        width: 20vw;
+        min-width: 250px;
+    }
+
+    .date-selector {
+        margin-left: -1px;
+        margin-top: -1px;
+        width: 25px;
+        height: 25px;
+    }
+}
